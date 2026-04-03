@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener {
-            // 2. Munculkan Pop-up (Toast)
+            // 2. Munculkan Pop-up Toast
             Toast.makeText(this, "Selamat, anda berhasil login!", Toast.LENGTH_SHORT).show()
 
             // 3. Pindah ke halaman Welcome setelah muncul pop-up
