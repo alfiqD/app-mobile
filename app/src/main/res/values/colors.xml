@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="bg_light_blue">#EEF5F7</color>
+    <color name="text_dark">#1A1A1A</color>
+    <color name="border_color">#B0C4CC</color>
+    <color name="button_blue">#E0EFF2</color>
+    <color name="icon_color">#4A6B7C</color>
+
+    <color name="bg_page_light">#EEF6F8</color> <color name="text_title_black">#000000</color>
+    <color name="text_grey">#757575</color> <color name="teal_logo">#4A8999</color> <color name="btn_login_blue">#E0F1F5</color> <color name="border_google_btn">#E0E0E0</color>
 </resources>
