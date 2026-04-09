@@ -1,61 +1,85 @@
 package com.example.alfiq_support
 
-//package com.example.kalkulatorbangun
-
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import com.example.alfiq_support.databinding.ActivityMainBinding
+import com.example.alfiq_support.pertemuan_2.BangunRuangActivity
+import com.example.alfiq_support.pertemuan_3.LoginActivity
+import com.example.alfiq_support.pertemuan_4.JenisLayananActivity
+import com.example.alfiq_support.pertemuan_4.ProfilActivity
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var etAlas: EditText
-    lateinit var etTinggi: EditText
-    lateinit var etSisi: EditText
-
-    lateinit var btnSegitiga: Button
-    lateinit var btnKubus: Button
-
-    lateinit var tvHasilSegitiga: TextView
-    lateinit var tvHasilKubus: TextView
+    // 1. Deklarasi View Binding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        etAlas = findViewById(R.id.etAlas)
-        etTinggi = findViewById(R.id.etTinggi)
-        etSisi = findViewById(R.id.etSisi)
+        // 2. Inisialisasi View Binding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btnSegitiga = findViewById(R.id.btnSegitiga)
-        btnKubus = findViewById(R.id.btnKubus)
-
-        tvHasilSegitiga = findViewById(R.id.tvHasilSegitiga)
-        tvHasilKubus = findViewById(R.id.tvHasilKubus)
-
-        btnSegitiga.setOnClickListener {
-
-            val alas = etAlas.text.toString().toDouble()
-            val tinggi = etTinggi.text.toString().toDouble()
-
-            val luas = 0.5 * alas * tinggi
-
-            tvHasilSegitiga.text = "Hasil Luas = $luas"
-
-            Log.d("SEGITIGA", "Perhitungan berhasil")
+        // ========================================================
+        // TOMBOL 1: Pindah ke Halaman Rumus
+        // ========================================================
+        binding.btnRumus.setOnClickListener {
+            // Sudah disesuaikan dengan nama activity Anda: BangunRuangActivity
+            val intent = Intent(this, BangunRuangActivity::class.java)
+            intent.putExtra("EXTRA_JUDUL", "Rumus Bangun Ruang")
+            intent.putExtra("EXTRA_DESKRIPSI", "Halaman perhitungan matematika bangun ruang")
+            startActivity(intent)
         }
 
-        btnKubus.setOnClickListener {
+        // ========================================================
+        // TOMBOL 2: Pindah ke Custom 1 (Profil)
+        // ========================================================
+        binding.btnProfil.setOnClickListener {
+            val intent = Intent(this, ProfilActivity::class.java)
+            intent.putExtra("EXTRA_JUDUL", "Profil Pengguna")
+            intent.putExtra("EXTRA_DESKRIPSI", "Kelola informasi akun dan pengaturan aplikasi Anda di sini.")
+            startActivity(intent)
+        }
 
-            val sisi = etSisi.text.toString().toDouble()
+        // ========================================================
+        // TOMBOL 3: Pindah ke Custom 2 (Jenis Layanan)
+        // ========================================================
+        binding.btnLayanan.setOnClickListener {
+            val intent = Intent(this, JenisLayananActivity::class.java)
+            intent.putExtra("EXTRA_JUDUL", "Pilihan Layanan")
+            intent.putExtra("EXTRA_DESKRIPSI", "Apakah Anda pengguna BPJS atau layanan mandiri?")
+            startActivity(intent)
+        }
 
-            val volume = sisi * sisi * sisi
+        // ========================================================
+        // TOMBOL 4: Tombol Logout (AlertDialog & Snackbar)
+        // ========================================================
+        binding.btnLogout.setOnClickListener { view ->
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Konfirmasi Logout")
+            builder.setMessage("Apakah Anda yakin ingin keluar dari aplikasi?")
 
-            tvHasilKubus.text = "Hasil Volume = $volume"
+            // Jika memilih YA (Berpindah ke halaman Login)
+            builder.setPositiveButton("Ya") { dialog, _ ->
+                // (Catatan: Pastikan Anda sudah membuat file LoginActivity)
+                val intent = Intent(this, LoginActivity::class.java)
+                // Membersihkan tumpukan halaman agar user tidak bisa tekan tombol back ke MainActivity
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            }
 
-            Log.d("KUBUS", "Perhitungan berhasil")
+            // Jika memilih TIDAK (Memunculkan Snackbar)
+            builder.setNegativeButton("Tidak") { dialog, _ ->
+                Snackbar.make(view, "Logout dibatalkan", Snackbar.LENGTH_SHORT).show()
+                dialog.dismiss()
+            }
+
+            // Tampilkan dialognya ke layar
+            builder.create().show()
         }
     }
 }

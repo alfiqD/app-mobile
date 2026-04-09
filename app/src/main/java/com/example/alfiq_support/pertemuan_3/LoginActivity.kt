@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
 
-            //finish() // Aktifkan jika ingin menutup halaman login
+            finish() // Aktifkan jika ingin menutup halaman login
         }
     }
 }

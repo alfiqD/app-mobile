@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tvJudulDariDepan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Judul Halaman"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvDeskripsiDariDepan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi halaman akan muncul di sini"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Luas Segitiga"
+            android:textStyle="bold"
+            android:textColor="#2A5964"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etAlas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Alas"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etTinggi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Tinggi"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnSegitiga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hitung Luas Segitiga"
+            android:backgroundTint="#2A5964"/>
+
+        <TextView
+            android:id="@+id/tvHasilSegitiga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hasil Luas = 0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginVertical="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volume Kubus"
+            android:textStyle="bold"
+            android:textColor="#2A5964"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etSisi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Sisi Kubus"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnKubus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hitung Volume Kubus"
+            android:backgroundTint="#2A5964"/>
+
+        <TextView
+            android:id="@+id/tvHasilKubus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hasil Volume = 0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
