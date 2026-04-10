@@ -35,8 +35,8 @@
             android:id="@+id/tvDeskripsiDariDepan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
             android:textSize="12sp"
+            android:fontFamily="@font/nunito_sans"
             android:textColor="#666666"
             app:layout_constraintTop_toBottomOf="@id/tvJudulDariDepan"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
             android:id="@+id/tvNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alfiq"
+            android:text="Alfiq Debriliant"
             android:textStyle="bold"
             android:textColor="#000000"
             android:textSize="20sp"
@@ -81,7 +81,7 @@
             android:id="@+id/btnEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit"
+            android:text="🖋️Edit"
             android:textAllCaps="false"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
@@ -125,6 +125,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingVertical="10dp"
+                    android:fontFamily="@font/nunito_sans"
                     android:gravity="center_vertical">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="📍 Lokasi" android:textSize="16sp" android:textStyle="" android:textColor="#000000"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="❯" android:textStyle="bold" android:textColor="#666666"/>
@@ -135,6 +136,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingVertical="10dp"
+                    android:fontFamily="@font/nunito_sans"
                     android:gravity="center_vertical">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🔖 Tersimpan" android:textSize="16sp" android:textColor="#000000"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="❯" android:textStyle="bold" android:textColor="#666666"/>
@@ -145,6 +147,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingVertical="10dp"
+                    android:fontFamily="@font/nunito_sans"
                     android:gravity="center_vertical">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="✔️ Riwayat" android:textSize="16sp" android:textColor="#000000"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="❯" android:textStyle="bold" android:textColor="#666666"/>
@@ -187,6 +190,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingVertical="10dp"
+                    android:fontFamily="@font/nunito_sans"
                     android:gravity="center_vertical">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🔒 Privasi" android:textSize="16sp" android:textColor="#000000"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="❯" android:textStyle="bold" android:textColor="#666666"/>
@@ -197,6 +201,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingVertical="10dp"
+                    android:fontFamily="@font/nunito_sans"
                     android:gravity="center_vertical">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🛡️ Login &amp; password" android:textSize="16sp" android:textColor="#000000"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="❯" android:textStyle="bold" android:textColor="#666666"/>
